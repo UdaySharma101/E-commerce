@@ -18,7 +18,7 @@ useEffect(()=>{
     setSroducts(apparel)
   },[]);
 })
-
+ 
   return (
 <>
 <Nav/>
