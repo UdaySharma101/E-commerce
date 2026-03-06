@@ -7,7 +7,7 @@ import LastFooter from './LastFooter'
 const Home = ({ products }) => {
   return (
     <>
-      <div className='h-[89vh] w-screen px-13 bg-gray-200 flex items-center justify-center  '>
+      <div className='h-[89vh] w-screen px-13  bg-gray-200 flex items-center justify-center  '>
         <HomeText />
         <HomeImg />
       </div>

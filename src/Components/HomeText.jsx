@@ -3,7 +3,7 @@ import React from 'react'
 
 const HomeText = () => {
   return (
-    <div className='h-full w-full  flex justify-center items-center '>
+    <div className='h-full w-full  flex justify-center items-center px-10 '>
       <div className='w-full flex flex-col  gap-5'>
         <h1 className='text-5xl font-bold animate-pulse'>FIND PRODUCTS <br />THAT MATCH <br/> YOUR LIFESTYLE</h1>
         <h2 className='text-gray-600'>Browse through our wide range of quality products across fashion, beauty, electronics, home essentials, and more — carefully curated to fit your needs and reflect your personality..</h2>

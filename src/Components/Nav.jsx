@@ -42,7 +42,7 @@ const Nav = ({setSearch}) => {
               
 
             <Link to="/cart">
-                        <button className='relative cursor-pointer hover:scale-115'><ShoppingCart /></button>
+                        <button className='relative cursor-pointer hover:animate-bounce'><ShoppingCart /></button>
 
                           {totalItems > 0 && (
                     <span className='absolute top-2 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full'>
