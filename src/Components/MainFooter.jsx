@@ -1,30 +1,33 @@
-import React from 'react'
-import { Twitter, Facebook, Instagram, Github } from 'lucide-react';
+import {Link} from 'react-router-dom'
+import { Twitter, Facebook, Instagram, Github, Linkedin } from 'lucide-react';
 
 
 const MainFooter = () => {
     return (
-        <div className='h-[60vh] w-screen bg-gray-300'>
+        <div className='h-[60vh] w-screen bg-gray-300 '>
 
             <div className='flex items-center justify-between  px-12 py-5'>
                 <div className='flex  flex-col ' >
                     <h1 className='font-bold text-4xl py-5'>SHOP.CO</h1>
-                    <span className='text-gray-400 flex  flex-col gap-1.5'>We have cloths that suits your style and <br /> which you are proud to wear from <br /> Women to Men. </span>
+                    <span className='text-gray-400 flex  flex-col gap-1.5'>We have clothes that suit your style and <br /> which you are proud to wear from <br /> Women to Men. </span>
 
                     <div className='flex py-8 gap-3 '>
                         <span className='h-8 w-8 rounded-full flex items-center justify-center shadow-m bg-white border cursor-pointer'><Twitter /> </span>
-                        <span className='h-8 w-8 rounded-full flex items-center justify-center shadow-m bg-white border cursor-pointer'><Facebook  /></span>
+                        <button className='h-8 w-8 rounded-full flex items-center justify-center shadow-m bg-white border cursor-pointer'><a href="https://www.linkedin.com/in/uday-sharma-45aa221a2/"><Linkedin /> </a></button>
                         <span className='h-8 w-8 rounded-full flex items-center justify-center shadow-m bg-white border cursor-pointer' ><Instagram /></span>
                         <span className='h-8 w-8 rounded-full flex items-center justify-center shadow-m bg-white border cursor-pointer'><Github /></span>
                     </div>
                 </div>
 
                 <div>
-                    <h1 className=' text-lg py-5'>COMPANY</h1>
+                    <h1 className=' text-md py-5'>COMPANY</h1>
                     <div className='text-gray-400 flex  flex-col gap-1.5'>
-                        <h2>About</h2>
+                        {/* <h2>About</h2> */}
+                        <Link to="/about">
+                          About
+                        </Link>
                         <h2>Features</h2>
-                        <h2>Works</h2>
+                        <h2>Careers</h2>
                     </div>
 
                 </div>
@@ -32,9 +35,9 @@ const MainFooter = () => {
                 <div>
                     <h1 className=' text-lg py-5'>HELP</h1>
                     <div className='text-gray-400 flex  flex-col gap-1.5'>
-                        <h2>Custmer Support</h2>
-                        <h2>Dilivery Details</h2>
-                        <h2>Term 7 Conditions</h2>
+                        <h2>Customer Support</h2>
+                        <h2>Delivery Details</h2>
+                        <h2>Terms & Conditions</h2>
                     </div>
 
 
@@ -50,7 +53,8 @@ const MainFooter = () => {
                     </div>
                 </div>
             </div>
-                        <div className='border-b-gray-700 px-20'></div>
+                        <div className='border-b-gray-700 px-20 flex  justify-center'>                        <h2>© 2026 SHOP.CO. All Rights Reserved.</h2>
+</div>
 
         </div>
     )

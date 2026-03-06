@@ -1,17 +1,24 @@
-import React from 'react'
+
+import { IndianRupee } from 'lucide-react'
+import { Link } from 'react-router-dom'
+
+
 
 const FooterTopItems = ({ products}) => {
     return (
         <div className='flex  items-center py-9 '>
        {products.map((data)=>{
-        return   <div className='w-full h-40  flex justify-center items-center'>
-            <div className='h-65 w-60  flex flex-col items-center'>
-                <img className='rounded-2xl h-20' src={data.image} alt="" />
+        return   <Link to={`/detailspage/${data.id}`} key={data.id} >
+             <div  className='h-65 w-60  flex flex-col items-center'>
+                <img className='rounded-2xl h-20 hover:scale-111 animation ease-in-out cursor-pointer ' src={data.image} alt="err" />
                 <h2 className='text-gray-400'>{data.name}</h2>
-                <h1 className='text-xl font-bold'>Rs{data.priceCents}</h1>
+                <h1 className='text-xl font-bold flex items-center justify-center '><IndianRupee size={15}/>{data.priceCents}</h1>
             </div>
+           </Link>
+        //   <div  className='w-full h-40   flex justify-center items-center' >
+          
 
-        </div>
+        // </div>
        })}
        </div>
     )

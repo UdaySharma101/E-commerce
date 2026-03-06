@@ -1,4 +1,5 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
+
 
 const LastFooter = () => {
   return (
@@ -11,23 +12,27 @@ const LastFooter = () => {
         <div className=''>
           <div className='flex gap-4'>
 
-            <div className='h-[35vh] w-[30vw] bg-white rounded-2xl flex justify-between items-center overflow-hidden cursor-pointer'>
+            <Link to='/menshirt'>
+              <div className='h-[35vh] w-[30vw] bg-white rounded-2xl flex justify-between items-center overflow-hidden cursor-pointer hover:scale-105 animation ease-in-out hover:shadow-2xl'>
 
-              <h1 className='text-3xl font-bold px-7 py-5'>Casual</h1>
-               <div className='h-full w-full overflow-hidden '>
-                <img className='h-full px-4 object-cover scale-125' src="https://plus.unsplash.com/premium_photo-1688497831384-e40b2e5615cd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2FzdWFsJTIwd2VhcnxlbnwwfHwwfHx8MA%3D%3D" alt="" />
-                
-               </div>
-            </div>
-
-            <div className='w-[50vw] h-[35vh] bg-white rounded-2xl flex justify-between items-center overflow-hidden  cursor-pointer'>
-              <h1  className='text-3xl font-bold px-7 py-5'>Formal</h1>
-
+                <h1 className='text-3xl font-bold px-7 py-5'>Men <br />Shirts</h1>
                 <div className='h-full w-full overflow-hidden '>
-                <img className='h-full px-4 object-cover scale-125' src="https://plus.unsplash.com/premium_photo-1722859210044-5ca8a393b001?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8Zm9ybWFsfGVufDB8fDB8fHww" alt="" />
-                
-               </div>
-            </div>
+                  <img className='h-full px-4 object-cover scale-125' src="https://plus.unsplash.com/premium_photo-1688497831384-e40b2e5615cd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2FzdWFsJTIwd2VhcnxlbnwwfHwwfHx8MA%3D%3D" alt="" />
+
+                </div>
+              </div>
+            </Link>
+
+            <Link to='/womwnshirt'>
+              <div className='w-[45vw] h-[35vh] bg-white rounded-2xl flex justify-between items-center overflow-hidden  cursor-pointer hover:scale-105 animation ease-in-out         hover:shadow-2xl'>
+                <h1 className='text-3xl font-bold px-7 py-5'>Women <br />Shirts</h1>
+
+                <div className='h-full w-full overflow-hidden  '>
+                  <img className='h-full px-4 object-cover scale-125' src="https://plus.unsplash.com/premium_photo-1690350731538-57344931ac02?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29tZW4lMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D" alt="" />
+
+                </div>
+              </div>
+            </Link>
 
           </div>
 
@@ -40,37 +45,41 @@ const LastFooter = () => {
 
 
 
-        <div className=''>
+        <div >
           <div className='flex gap-4'>
 
-            <div className='h-[35vh] w-[50vw] bg-white rounded-2xl flex gap-4 justify-between items-center overflow-hidden  cursor-pointer'>
-              <h1  className='text-3xl font-bold px-7 py-5'>Party</h1>
-                <div className='h-full w-full overflow-hidden '>
-                <img className='h-full px-4 object-cover scale-125' src="https://plus.unsplash.com/premium_photo-1675253321321-442968b33d8a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fHBhcnR5JTIwb3V0Zml0fGVufDB8fDB8fHww" alt="" />
-                
-               </div>
-            </div>
+            <Link to='/menshoes'>
+            <div className='h-[35vh] w-[45vw] bg-white rounded-2xl flex gap-4 justify-between items-center overflow-hidden  cursor-pointer hover:scale-105 animation ease-in-out hover:shadow-2xl'>
+              <h1 className='text-3xl font-bold px-7 py-5'>Men <br />Shoes</h1>
+              <div className='h-full w-full overflow-hidden '>
+                <img className='h-full px-4 object-cover scale-125' src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c2hvZXN8ZW58MHx8MHx8fDA%3D" alt="" />
 
-            <div className='w-[30vw] h-[35vh] bg-white rounded-2xl flex justify-between items-center overflow-hidden  cursor-pointer'>
-            <h1  className='text-3xl font-bold px-7 py-5'>Gym</h1>
+              </div>
+            </div>
+          </Link>
+
+          <Link to='/womenshoes'>
+            <div className='w-[30vw] h-[35vh] bg-white rounded-2xl flex justify-between items-center overflow-hidden  cursor-pointer hover:scale-105 animation ease-in-out hover:shadow-2xl'>
+              <h1 className='text-3xl font-bold px-7 py-5'>Women <br />Shoes</h1>
 
               <div className='h-full w-full overflow-hidden '>
-                <img className='h-full px-4 object-cover scale-125' src="https://images.unsplash.com/photo-1744551358229-ef84be2f6b6b?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fGd5bSUyMG91dGZpdHxlbnwwfHwwfHx8MA%3D%3D" alt="" />
-                
-               </div>
+                <img className='h-full px-4 object-cover scale-125' src="https://images.unsplash.com/photo-1559334417-01b38aec66bd?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fHdvbWVuJTIwc2hvZXN8ZW58MHx8MHx8fDA%3D" alt="" />
+
+              </div>
             </div>
-
-          </div>
-
-
-
+          </Link>
 
         </div>
+
+
 
 
       </div>
 
+
     </div>
+
+    </div >
   )
 }
 
