@@ -1,29 +1,37 @@
-import { IndianRupee } from 'lucide-react'
-import { Link } from 'react-router-dom'
+
+import { IndianRupee } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const NewArivals = ({ products }) => {
-    return (
+  return (
+    <div className="w-full grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-12">
+      {products.map((data) => {
+        return (
+          <Link to={`/detailspage/${data.id}`} key={data.id}>
+            <div className="flex flex-col items-center bg-white rounded-xl p-4 hover:shadow-lg transition cursor-pointer">
 
-        <div className='flex  items-center py-20 cursor-pointer '>
-            {products.map((data) => {
-                return <Link to={`/detailspage/${data.id}`} key={data.id}>
-            <div className='h-65 w-60  flex flex-col items-center '>
-                {/* {console.log("NewArrival ID:", data.id)} */}
-                <img className='rounded-2xl h-20 hover:scale-111 animation ease-in-out' src={data.image} alt="" />
-                <h2 className='text-gray-400'>{data.name}</h2>
-                <h1 className='text-xl font-bold flex items-center justify-center'><IndianRupee size={15} />{data.priceCents}</h1>
+              <img
+                className="rounded-xl h-32 object-contain hover:scale-105 transition"
+                src={data.image}
+                alt={data.name}
+              />
+
+              <h2 className="text-gray-500 text-sm mt-3 text-center">
+                {data.name}
+              </h2>
+
+              <h1 className="text-lg font-bold flex items-center gap-1 mt-1">
+                <IndianRupee size={14} />
+                {data.priceCents}
+              </h1>
+
             </div>
+          </Link>
+        );
+      })}
+    </div>
+  );
+};
 
-             </Link>
+export default NewArivals;
 
-
-        // <div className='w-full h-40  flex justify-center items-center '>
-
-        // </div>
-       })}
-       </div >
-    
-  )
-}
-
-export default NewArivals

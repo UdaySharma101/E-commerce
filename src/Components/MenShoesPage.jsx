@@ -1,58 +1,87 @@
-import { IndianRupee } from 'lucide-react';
-import { useContext, useEffect, useState } from 'react';
-import { CartContext } from '../context/CartContext';
 
-import { Link } from 'react-router-dom';
+import { IndianRupee } from "lucide-react";
+import { useContext, useEffect, useState } from "react";
+import { CartContext } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 const WomenShirts = () => {
-
-  const [apidata, setapidata] = useState(null)
-  const {addToCart} = useContext(CartContext)
+  const [apidata, setapidata] = useState(null);
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const res = await fetch('https://dummyjson.com/products/category/mens-shoes');
+      const res = await fetch(
+        "https://dummyjson.com/products/category/mens-shoes"
+      );
       const data = await res.json();
-      setapidata(data)
-      // console.log(data)
+      setapidata(data);
     };
 
     fetchProducts();
-  }, [])
+  }, []);
 
-  if (!apidata) return <h1 className='h-screen text-xl cursor-wait flex justify-center  items-center ' >Loading.....</h1>
-
+  if (!apidata)
+    return (
+      <div className="h-screen flex items-center justify-center text-xl">
+        Loading...
+      </div>
+    );
 
   return (
-    <div className='flex flex-wrap justify-center gap-15 p-6'>
-      {apidata.products.map((raw) => {
-        return <Link to={`/shoesdetlpage/${raw.id}`} key={raw.id}>
-          <div className=' flex items-center justify-center gap-10'>
-            <div className='h-90 w-60  flex flex-col items-center justify-center cursor-pointer gap-2 text-center'>
-              <img className='h-50 hover:scale-105 ease-in-out anima ' src={raw.images[0]} alt="" />
-              <h2 className='w-39 text-gray-500 '>{raw.brand}</h2>
-              <h2 className='w-39 text-gray-500 '>{raw.title}</h2>
-              <h1 className='flex justify-center items-center font-bold text-2xl'> <IndianRupee size={15} />{raw.price}</h1>
-              <button
-              onClick={(e)=>{
-                e.preventDefault()
-                const data = {
-                  id: raw.id,
-                    title: raw.title,
-                    price: raw.price ,
-                    image: raw.images[0]
-                }
-                addToCart(data)
-              }}
+    <section className="w-full px-4 py-12 flex justify-center">
+      <div className="max-w-7xl w-full">
 
-              className='bg-black text-white px-5 py-3 rounded-2xl cursor-pointer hover:scale-105 animation-all ease-in-out hover:shadow-2xl'>Add to cart</button>
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {apidata.products.map((raw) => {
+            return (
+              <Link to={`/shoesdetlpage/${raw.id}`} key={raw.id}>
+                <div className="flex flex-col items-center bg-white p-4 rounded-xl shadow hover:shadow-xl transition text-center">
 
-            </div>
-          </div>
-        </Link>
-      })}
-    </div>
-  )
-}
+                  <img
+                    className="h-36 object-contain mb-3 hover:scale-105 transition"
+                    src={raw.images[0]}
+                    alt={raw.title}
+                  />
 
-export default WomenShirts
+                  <h2 className="text-gray-400 text-sm">
+                    {raw.brand}
+                  </h2>
+
+                  <h2 className="text-sm line-clamp-2">
+                    {raw.title}
+                  </h2>
+
+                  <h1 className="flex items-center font-bold text-lg mt-1">
+                    <IndianRupee size={14} />
+                    {raw.price}
+                  </h1>
+
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const data = {
+                        id: raw.id,
+                        title: raw.title,
+                        price: raw.price,
+                        image: raw.images[0],
+                      };
+                      addToCart(data);
+                    }}
+                    className="mt-3 bg-black text-white px-4 py-2 rounded-xl hover:scale-105 transition hover:shadow-lg"
+                  >
+                    Add to cart
+                  </button>
+
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default WomenShirts;
+

@@ -1,3 +1,4 @@
+
 import React from 'react'
 
 const Abot = () => {
@@ -5,7 +6,6 @@ const Abot = () => {
     <div className="w-full bg-gray-50 py-16 px-6">
       <div className="max-w-5xl mx-auto flex flex-col gap-12">
 
-        {/* Heading Section */}
         <div className="text-center space-y-6">
           <h1 className="text-4xl md:text-5xl font-extrabold text-gray-800 leading-tight">
             Welcome to our online store — built with passion for clean design and seamless shopping experiences.
@@ -17,7 +17,6 @@ const Abot = () => {
           </p>
         </div>
 
-        {/* Why This Project */}
         <div className="bg-white shadow-md rounded-2xl p-8 space-y-6">
           <h2 className="text-2xl font-bold text-gray-800 border-b pb-2">
             Why This Project?
@@ -36,7 +35,6 @@ const Abot = () => {
           </ul>
         </div>
 
-        {/* Features */}
         <div className="bg-white shadow-md rounded-2xl p-8 space-y-6">
           <h2 className="text-2xl font-bold text-gray-800 border-b pb-2">
             Features
@@ -51,7 +49,6 @@ const Abot = () => {
           </ul>
         </div>
 
-        {/* Built With */}
         <div className="bg-white shadow-md rounded-2xl p-8 space-y-6">
           <h2 className="text-2xl font-bold text-gray-800 border-b pb-2">
             Built With
@@ -65,7 +62,6 @@ const Abot = () => {
           </ul>
         </div>
 
-        {/* Vision */}
         <div className="bg-white shadow-md rounded-2xl p-8 space-y-6">
           <h2 className="text-2xl font-bold text-gray-800 border-b pb-2">
             Vision
@@ -82,7 +78,6 @@ const Abot = () => {
           </ul>
         </div>
 
-        {/* Quote */}
         <div className="text-center mt-6">
           <p className="italic text-gray-700 text-lg max-w-3xl mx-auto">
             “This project helped me strengthen my understanding of dynamic routing,
@@ -96,3 +91,4 @@ const Abot = () => {
 }
 
 export default Abot
+

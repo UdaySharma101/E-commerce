@@ -1,53 +1,90 @@
-import { IndianRupee } from 'lucide-react'
-import React, { useEffect, useState, useContext } from 'react'
-import { Link } from 'react-router-dom'
-import { CartContext } from "../context/CartContext"
+
+import { IndianRupee } from "lucide-react";
+import React, { useEffect, useState, useContext } from "react";
+import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
 
 const WomenShoespage = () => {
-  const [womenShoes, setWomenShoes] = useState(null)
-  const { addToCart } = useContext(CartContext)
+  const [womenShoes, setWomenShoes] = useState(null);
+  const { addToCart } = useContext(CartContext);
+
   useEffect(() => {
     const fetchingShoes = async () => {
-      const res = await fetch('https://dummyjson.com/products/category/womens-shoes')
-      const data = await res.json()
-      setWomenShoes(data)
-      // console.log(data)
-    }
-    fetchingShoes()
-  }, [])
+      const res = await fetch(
+        "https://dummyjson.com/products/category/womens-shoes"
+      );
+      const data = await res.json();
+      setWomenShoes(data);
+    };
+    fetchingShoes();
+  }, []);
 
-  if (!womenShoes) return <h1 className='h-screen cursor-wait flex items-center justify-center'>Loading...</h1>
+  if (!womenShoes)
+    return (
+      <div className="h-screen flex items-center justify-center">
+        Loading...
+      </div>
+    );
 
   return (
-    <div className='h-full w-full flex flex-wrap justify-center items-center gap-20'>
-      {womenShoes.products.map((raw) => {
-        return <Link className='py-20 w-60 flex flex-col items-center justify-center text-center ' to={`/shoesdetlpage/${raw.id}`} key={raw.id}>
-          {/* <div className=''> */}
-          <div className=' w-fit flex flex-col items-center justify-center  gap-5 ' >
-            <img className=' cursor-pointer hover:scale-105 animation ease-in-out' src={raw.images[1]} alt="" />
-            <h2 className='text-lg'>{raw.brand}</h2>
-            <h2 className='text-lg'>{raw.title}</h2>
-            <h1 className='text-2xl font-bold flex items-center justify-center'><IndianRupee />{raw.price}</h1>
-            <button
-              onClick={(e) => {
-                e.preventDefault()
-                const product = {
-                  id: raw.id,
-                  title: raw.title,
-                  price: raw.price
-                }
+    <section className="w-full px-4 py-12 flex justify-center">
+      <div className="max-w-7xl w-full">
 
-                addToCart(product)
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+          {womenShoes.products.map((raw) => {
+            return (
+              <Link
+                to={`/shoesdetlpage/${raw.id}`}
+                key={raw.id}
+              >
+                <div className="flex flex-col items-center bg-white p-4 rounded-xl shadow hover:shadow-xl transition text-center">
 
-              }}
-              className='bg-black text-white px-5 py-3 rounded-2xl cursor-pointer hover:scale-105 animation-all ease-in-out hover:shadow-2xl'>Add to cart</button>
+                  <img
+                    className="h-36 object-contain mb-3 hover:scale-105 transition"
+                    src={raw.images[1]}
+                    alt={raw.title}
+                  />
 
-            {/* </div> */}
-          </div>
-        </Link>
-      })}
-    </div >
-  )
-}
+                  <h2 className="text-gray-500 text-sm">
+                    {raw.brand}
+                  </h2>
 
-export default WomenShoespage
+                  <h2 className="text-sm line-clamp-2">
+                    {raw.title}
+                  </h2>
+
+                  <h1 className="text-lg font-bold flex items-center mt-1">
+                    <IndianRupee size={14} />
+                    {raw.price}
+                  </h1>
+
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      const product = {
+                        id: raw.id,
+                        title: raw.title,
+                        price: raw.price,
+                        image: raw.images[1],
+                      };
+
+                      addToCart(product);
+                    }}
+                    className="mt-3 bg-black text-white px-4 py-2 rounded-xl hover:scale-105 transition hover:shadow-lg"
+                  >
+                    Add to cart
+                  </button>
+
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default WomenShoespage;
+
