@@ -35,7 +35,7 @@ const LastFooter = () => {
 
               <img
                 className="h-full w-[45%] object-cover"
-                src="https://plus.unsplash.com/premium_photo-1690350731538-57344931ac02?w=600&auto=format&fit=crop&q=60"
+                src="https://images.unsplash.com/photo-1541101767792-f9b2b1c4f127?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8d29tZW4lMjBzaGlydHxlbnwwfHwwfHx8MA%3D%3D"
                 alt=""
               />
             </div>
@@ -48,11 +48,13 @@ const LastFooter = () => {
                 Men <br /> Shoes
               </h1>
 
-              <img
-                className="h-full w-[45%] object-cover"
-                src="https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=600"
-                alt=""
-              />
+              <div className="h-full w-[45%] overflow-hidden transition  ">
+                <img
+                  className="h-full w-full object-cover hover:scale-105 "
+                  src="https://images.unsplash.com/photo-1715775506665-3201fe907dda?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nzd8fG1lbiUyMHNob2VzfGVufDB8fDB8fHww"
+                  alt=""
+                />
+              </div>
             </div>
           </Link>
 
