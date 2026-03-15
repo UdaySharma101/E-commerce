@@ -17,7 +17,11 @@ export const CartProvider = ({ children }) => {
 
   },[cart])
 
-    
+      const [show, setShow] = useState(false)
+
+  useEffect(() => {
+    setShow(true)
+  }, [])
 
   const addToCart = (product) => {
   setCart((prevCart) => {
@@ -89,7 +93,9 @@ export const CartProvider = ({ children }) => {
         increaseQuantity,
         decreaseQuantity,
         clearCart,
-         clearFullCart 
+         clearFullCart,
+         show,
+         setShow
       }}
     >
       {children}
